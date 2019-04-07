@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 
 import Subtotal from './components/Subtotal'
 import PickupSavings from './components/PickupSavings'
+import Tax from './components/Tax'
+import ETotal from './components/EstimatedTotal'
 
 
 class App extends Component {
@@ -12,7 +14,9 @@ class App extends Component {
     super(props)
     this.state = {
       total : 0,
-      totalSaving : -3.5
+      totalSaving : -3.5,
+      taxes : 0,
+      EstimatedTotal: 0
     }
   }
   render() {
@@ -22,6 +26,9 @@ class App extends Component {
         <h3 style={{marginBottom : '1.5em', textAlign: 'center'}}>Shopping Cart</h3>
         <Subtotal price = {this.state.total.toFixed(2)} />
         <PickupSavings price = {this.state.totalSaving} />
+        <Tax taxes = {this.state.taxes.toFixed(2)} />
+        <hr />
+        <ETotal price = {this.state.EstimatedTotal.toFixed(2)} />
         </Container>
         </div>
     );

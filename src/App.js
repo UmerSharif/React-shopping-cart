@@ -7,6 +7,7 @@ import Subtotal from './components/Subtotal'
 import PickupSavings from './components/PickupSavings'
 import Tax from './components/Tax'
 import ETotal from './components/EstimatedTotal'
+import ItemDetail from './components/ItemDetail'
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
         <Tax taxes = {this.state.taxes.toFixed(2)} />
         <hr />
         <ETotal price = {this.state.EstimatedTotal.toFixed(2)} />
+        <ItemDetail />
         </Container>
         </div>
     );

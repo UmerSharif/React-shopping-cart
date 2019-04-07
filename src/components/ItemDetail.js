@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {Container, Row, Col, Button, Collapse, Well, Media} from 'react-bootstrap'
+import {Container, Row, Col, Button, Collapse,Media,Jumbotron} from 'react-bootstrap'
+import Aurelia from '../aurelia.jpg'
 
 export default class ItemDetail extends Component {
 
@@ -28,7 +29,30 @@ export default class ItemDetail extends Component {
         {this.state.open === false ? `See`: `Hide`} Item Detail
         {this.state.open === false ? `+`: `-`} 
         </Button>
+        <Collapse in={this.state.open}>
+        <div style={{marginTop:'10px'}}>
+        <Jumbotron style={{padding: '1rem 1rem'}}>
+            <Media>
+                <img
+                width={100}
+                height={100}
+                className="mr-3"
+                src={Aurelia}
+                alt="Generic placeholder"
+            />
 
+                <Media.Body>
+                    <h5>Aurelia</h5>
+                    <p>
+                        Buy this item and get a chance to hangout with super cool Girl Aurelia.
+                    </p>
+                    </Media.Body>
+
+            </Media>
+        </Jumbotron>
+        </div>
+        
+        </Collapse>
       </div>
     )
   }

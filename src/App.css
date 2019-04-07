@@ -35,7 +35,7 @@
 .purchase-card {
   margin-top: 15px;
   max-width: 350px;
-  height: 600px;
+  min-height: 80vh; 
   box-shadow: 0 4px 8px 0 #282c34;
   border-radius: 6px;
 }

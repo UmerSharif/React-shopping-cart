@@ -43,3 +43,7 @@
 .show-grid {
   padding-bottom: 1.5em;
 }
+
+.strike-price {
+  text-decoration: line-through
+}

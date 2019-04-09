@@ -51,6 +51,7 @@ export default class ItemDetail extends Component {
                     <strong> {`$${this.props.price}`}</strong>
                     <strong className="strike-price"> {`$${this.props.price}`}</strong>
                     </Col>
+                    <Col md={6}> QTY: 1 </Col>
                     </Row>
                     </Media.Body>
 

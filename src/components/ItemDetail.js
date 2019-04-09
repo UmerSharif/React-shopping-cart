@@ -46,6 +46,12 @@ export default class ItemDetail extends Component {
                     <p>
                         Buy this item and get a chance to hangout with super cool Girl Aurelia.
                     </p>
+                    <Row className="show-grid">
+                    <Col md={6}>
+                    <strong> {`$${this.props.price}`}</strong>
+                    <strong className="strike-price"> {`$${this.props.price}`}</strong>
+                    </Col>
+                    </Row>
                     </Media.Body>
 
             </Media>

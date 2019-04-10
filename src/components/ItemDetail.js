@@ -30,7 +30,7 @@ export default class ItemDetail extends Component {
         {this.state.open === false ? `+`: `-`} 
         </Button>
         <Collapse in={this.state.open}>
-        <div style={{marginTop:'10px'}}>
+        <div style={{marginTop:'10px'}}> // add div inside collapse for smooth animation. from react-bootstrap
         <Jumbotron style={{padding: '1rem 1rem'}}>
             <Media>
                 <img

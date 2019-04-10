@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {Container, Row, Col, Button, Collapse, Well, Media} from 'react-bootstrap'
+import {Container, Row, Col, Button, Collapse,Media,Jumbotron} from 'react-bootstrap'
+import Tree from '../tree.jpg'
 
 export default class ItemDetail extends Component {
 
@@ -28,7 +29,30 @@ export default class ItemDetail extends Component {
         {this.state.open === false ? `See`: `Hide`} Item Detail
         {this.state.open === false ? `+`: `-`} 
         </Button>
+        <Collapse in={this.state.open}>
+        <div style={{marginTop:'10px'}}>
+        <Jumbotron style={{padding: '1rem 1rem'}}>
+            <Media>
+                <img
+                width={100}
+                height={100}
+                className="mr-3"
+                src={Tree}
+                alt="Generic placeholder"
+            />
 
+                <Media.Body>
+                    <h5>Autumn tree</h5>
+                    <p>
+                        Buy this Painting and and enjoy beautiful memories
+                    </p>
+                    </Media.Body>
+
+            </Media>
+        </Jumbotron>
+        </div>
+        
+        </Collapse>
       </div>
     )
   }

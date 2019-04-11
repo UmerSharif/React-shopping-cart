@@ -47,7 +47,7 @@ export default class ItemDetail extends Component {
                         Buy this Painting and and enjoy beautiful memories
                     </p>
                     </Media.Body>
-
+                  
             </Media>
         </Jumbotron>
         </div>

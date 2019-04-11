@@ -46,6 +46,13 @@ export default class ItemDetail extends Component {
                     <p>
                         Buy this Painting and and enjoy beautiful memories
                     </p>
+                    <Row className="show-grid">
+                    <Col md={6}>
+                    <strong> {`$${this.props.price}`}</strong>
+                    <strong className="strike-price"> {`$${this.props.price}`}</strong>
+                    </Col>
+                    <Col md={6}> QTY: 1 </Col>
+                    </Row>
                     </Media.Body>
                   
             </Media>

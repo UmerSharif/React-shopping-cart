@@ -23,7 +23,6 @@ export default class ItemDetail extends Component {
       <div>
         
         <Button className="item-detail-button"
-        bsStyle = "link"
         onClick = {this.ToggleItemDetail}
         >
         {this.state.open === false ? `See`: `Hide`} Item Detail

@@ -23,8 +23,9 @@ export default class PromoCode extends Component {
         variant = 'link'
         onClick = {this.ToggleWhatEvs}
         >
-
-
+        {this.state.open === false ? `Apply`: `Hide`}
+        Promo Code
+        {this.state.open === false ? `+`: `-`}
         </Button>
       </div>
     )

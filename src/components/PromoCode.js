@@ -23,10 +23,34 @@ export default class PromoCode extends Component {
         variant = 'link'
         onClick = {this.ToggleWhatEvs}
         >
-        {this.state.open === false ? `Apply`: `Hide`}
-        Promo Code
-        {this.state.open === false ? `+`: `-`}
+        {this.state.open === false ? `Apply `: `Hide `}
+        promo code
+        {this.state.open === false ? ` +`: ` -`}
         </Button>
+        <Collapse in={this.state.open}>
+        <div style={{marginTop:'10px'}}>
+        <Jumbotron style={{padding: '1rem 1rem'}}>
+        <Row className="show-grid">
+          <Col md={12}>
+            <Form>
+              <FormGroup controlId="formInlineName">
+                <FormLabel>Promo Code
+                  <FormControl 
+                  type="text" 
+                  placeholder="Enter Promo Code"
+                  value = {this.props.promoCode} 
+                  onChange={this.handleChange}
+                  />
+                </FormLabel>
+              </FormGroup>
+            </Form>
+          </Col>
+          </Row>
+        </Jumbotron>
+
+
+          </div>
+        </Collapse>
       </div>
     )
   }

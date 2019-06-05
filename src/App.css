@@ -1,5 +1,5 @@
 .App {
-  text-align: center; 
+  /* text-align: center;  */
 }
 
 .App-logo {
@@ -38,6 +38,7 @@
   min-height: 80vh; 
   box-shadow: 0 4px 8px 0 #282c34;
   border-radius: 6px;
+  padding-bottom: 15px;
 }
 
 .show-grid {

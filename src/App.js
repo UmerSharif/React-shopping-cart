@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      total : 0,
+      total : 100,
       totalSaving : -3.5,
       taxes : 0,
       EstimatedTotal: 0,
@@ -23,6 +23,16 @@ class App extends Component {
 
     }
   }
+
+  componentDidMount() {
+    const totalTax = (this.state.total + this.state.totalSaving) * 0.0875
+    const totalEstimatedTotal = this.state.total + this.state.totalSaving + totalTax
+    this.setState({
+      taxes: totalTax,
+      EstimatedTotal: totalEstimatedTotal
+    })
+  }
+  
 
   giveDiscount(){
 

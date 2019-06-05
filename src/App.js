@@ -18,9 +18,17 @@ class App extends Component {
       total : 0,
       totalSaving : -3.5,
       taxes : 0,
-      EstimatedTotal: 0
+      EstimatedTotal: 0,
+      disabledPromo: false,
+
     }
   }
+
+  giveDiscount(){
+
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -33,7 +41,10 @@ class App extends Component {
         <ETotal price = {this.state.EstimatedTotal.toFixed(2)} />
         <ItemDetail price={this.state.EstimatedTotal.toFixed(2)} />
         <hr />
-        <PromoCode />
+        <PromoCode 
+        giveDiscount = { () => this.giveDiscount()}
+        isDisabled = {this.state.disabledPromo}
+        />
         </Container>
         </div>
     );

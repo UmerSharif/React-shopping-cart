@@ -43,6 +43,12 @@ export default class PromoCode extends Component {
                   />
                 </FormLabel>
               </FormGroup>
+              <Button variant="success"
+              disabled = {this.props.isDisabled}
+              onClick = {this.props.giveDiscount}
+              >
+        Apply Code
+        </Button>
             </Form>
           </Col>
           </Row>

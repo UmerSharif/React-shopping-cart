@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import {Container, Row, Col, Button, Collapse,Media,Jumbotron, Form, FormGroup, FormControl, FormLabel} from 'react-bootstrap'
-export default class PromoCode extends Component {
-    constructor(props){
+import {connect} from 'react-redux'
+import handleChange from '../actions/promoAction'
+
+ class PromoCode extends Component {
+  constructor(props){
         super(props)
 
         this.state = {
-            open: false,
-            value: ''
+            open: false
         }
 
         this.ToggleWhatEvs = this.ToggleWhatEvs.bind(this)
@@ -47,7 +49,7 @@ export default class PromoCode extends Component {
               disabled = {this.props.isDisabled}
               onClick = {this.props.giveDiscount}
               >
-        Apply Code
+        Redeem Code
         </Button>
             </Form>
           </Col>
@@ -61,3 +63,12 @@ export default class PromoCode extends Component {
     )
   }
 }
+
+
+
+const mapStateToProps = state => ({
+  promoCodeData: state.promoReducer.value
+})
+
+export default connect(mapStateToProps, {handleChange})(PromoCode)
+

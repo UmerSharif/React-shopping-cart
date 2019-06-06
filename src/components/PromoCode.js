@@ -71,7 +71,7 @@ import {handleChange} from '../actions/promoAction'
 
 
 const mapStateToProps = state => ({
-  promoCodeData: state.promoReducer.value
+  promoCodeData: state.promoReducerValue.value
 })
 
 export default connect(mapStateToProps, {handleChange})(PromoCode)

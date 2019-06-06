@@ -1,8 +1,8 @@
-import {createStore, combineReducers, applyMiddleware, compose} from "redux";
+import {createStore, applyMiddleware, compose} from "redux";
 import logger from "redux-logger";
 import thunk from 'redux-thunk'
 
-import promoReducer from './reducers/promoReducer'
+import rootReducer from './reducers/rootReducer'
 
 
 const initialState = {}
@@ -10,9 +10,7 @@ const initialState = {}
 const middleWares = [logger, thunk]
 
 const store = createStore(
-        combineReducers({
-        promoReducer
-        }),
+        rootReducer,
         initialState, 
         compose(
         applyMiddleware(...middleWares),

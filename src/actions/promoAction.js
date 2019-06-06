@@ -1,9 +1,8 @@
+import {PROMO_CODE} from './rootAction'
 
-const handleChange = formVal => dispatch => {
+export const handleChange = formVal => dispatch => {
     dispatch({
-        type: 'PROMO_CODE',
+        type: PROMO_CODE,
         payload: formVal.target.value
     })
 }
-
-export default handleChange

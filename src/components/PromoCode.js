@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Container, Row, Col, Button, Collapse,Media,Jumbotron, Form, FormGroup, FormControl, FormLabel} from 'react-bootstrap'
 import {connect} from 'react-redux'
-import handleChange from '../actions/promoAction'
+import {handleChange} from '../actions/promoAction'
 
  class PromoCode extends Component {
   constructor(props){
@@ -16,6 +16,10 @@ import handleChange from '../actions/promoAction'
 
     ToggleWhatEvs(){
         this.setState({open: !this.state.open})
+    }
+
+    handleChange = formVal => {
+      this.props.handleChange(formVal)
     }
 
   render() {
@@ -40,7 +44,7 @@ import handleChange from '../actions/promoAction'
                   <FormControl 
                   type="text" 
                   placeholder="Enter Promo Code"
-                  value = {this.props.promoCode} 
+                  value = {this.props.promoCodeData} 
                   onChange={this.handleChange}
                   />
                 </FormLabel>

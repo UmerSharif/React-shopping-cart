@@ -1,7 +1,6 @@
-import PROMO_CODE from '../actions/promoAction'
+import {PROMO_CODE} from '../actions/rootAction'
 
 const initialState = {
-    
         open: false,
         value: ''
     
@@ -9,6 +8,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
      switch(action.type){
+        
             case PROMO_CODE:
                 return {
                     ...state,
@@ -17,6 +17,4 @@ export default function(state = initialState, action) {
             default:
                 return state
      }
-    
-
 }

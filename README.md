@@ -1,3 +1,9 @@
+# Shopping cart build with react and redux
+
+## [See the Live Project Here](https://react-custom-shopping-cart.netlify.com/)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

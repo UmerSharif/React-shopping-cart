@@ -9,19 +9,24 @@ import Tax from './components/Tax'
 import ETotal from './components/EstimatedTotal'
 import ItemDetail from './components/ItemDetail'
 import PromoCode from './components/PromoCode'
+import {connect} from 'react-redux'
+import {handleChange} from './actions/promoAction'
 
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      total : 100,
-      totalSaving : -3.5,
+      total : 500,
+      previousTotal : 600,
+      totalSaving : -10.5,
       taxes : 0,
       EstimatedTotal: 0,
       disabledPromo: false,
 
     }
+
+    this.giveDiscountHandler = this.giveDiscountHandler.bind(this)
   }
 
   componentDidMount() {
@@ -34,8 +39,14 @@ class App extends Component {
   }
   
 
-  giveDiscount(){
-
+  giveDiscountHandler(){
+   if(this.props.promoCodeData === 'HireMe') {
+     const totalAfterDiscount = this.state.EstimatedTotal * 0.9
+     this.setState({
+       EstimatedTotal: totalAfterDiscount,
+       disabledPromo: true
+     })
+   }
   }
 
 
@@ -49,10 +60,10 @@ class App extends Component {
         <Tax taxes = {this.state.taxes.toFixed(2)} />
         <hr />
         <ETotal price = {this.state.EstimatedTotal.toFixed(2)} />
-        <ItemDetail price={this.state.EstimatedTotal.toFixed(2)} />
+        <ItemDetail price={this.state.EstimatedTotal.toFixed(2)} preTotal={this.state.previousTotal.toFixed(2)} />
         <hr />
         <PromoCode 
-        giveDiscount = { () => this.giveDiscount()}
+        giveDiscount = {this.giveDiscountHandler}
         isDisabled = {this.state.disabledPromo}
         />
         </Container>
@@ -61,4 +72,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  promoCodeData: state.promoReducerValue.value
+})
+
+export default connect(mapStateToProps, {handleChange})(App)

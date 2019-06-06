@@ -40,7 +40,7 @@ import {handleChange} from '../actions/promoAction'
           <Col md={12}>
             <Form>
               <FormGroup controlId="formInlineName">
-                <FormLabel>Promo Code
+                <FormLabel><p>Enter <strong>HireMe</strong> to get a discount</p>
                   <FormControl 
                   type="text" 
                   placeholder="Enter Promo Code"

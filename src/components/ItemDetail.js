@@ -48,7 +48,7 @@ export default class ItemDetail extends Component {
                     <Row className="show-grid">
                     <Col md={6}>
                     <strong> {`$${this.props.price}`}</strong>
-                    <strong className="strike-price"> {`$${this.props.price}`}</strong>
+                    <strong className="strike-price"> {`$${this.props.preTotal}`}</strong>
                     </Col>
                     <Col md={6}> QTY: 1 </Col>
                     </Row>
